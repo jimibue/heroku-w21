@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <Memes />
+      <h1>Feature 1</h1>
     </div>
   );
 }
