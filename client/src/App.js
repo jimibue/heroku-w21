@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <Memes />
       <h1>Feature 1</h1>
+      <h1>Feature 2</h1>
     </div>
   );
 }
