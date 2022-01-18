@@ -9,6 +9,10 @@ const Memes = ()=>{
         getMemes()
     },[])
 
+    const addMeme = (meme)=>{
+        setMemes([meme, ...memes])
+    }
+
     const getMemes = async ()=>{
         try{
           let res = await axios.get('/api/memes')
@@ -22,7 +26,7 @@ const Memes = ()=>{
         <div>
             <h1>Memes YO BOB F1 FEATURE Branch HERE DONE KEEP THIS! H1</h1>
             <p>{JSON.stringify(memes)}</p>
-            <MemeForm />
+            <MemeForm addMeme={addMeme}/>
         </div>
     )
 }
