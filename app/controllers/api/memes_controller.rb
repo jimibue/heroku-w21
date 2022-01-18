@@ -1,6 +1,7 @@
 class Api::MemesController < ApplicationController
 
     def index
+     Thing.all
      render json: Meme.all
     end
 
