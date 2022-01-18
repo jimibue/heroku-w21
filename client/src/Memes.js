@@ -21,8 +21,15 @@ const Memes = ()=>{
     return (
         <div>
             <h1>Memes YO BOB F1 FEATURE Branch HERE DONE KEEP THIS! H1</h1>
-            <p>{JSON.stringify(memes)}</p>
             <MemeForm />
+            {memes.map( meme => {
+                return(
+                    <div style={{width:'300px', height:'300px', margin:'20px'}}>
+                        <h1>{meme.title}</h1>
+                        <img  src={meme.image_url} height="200px" width='200px'/>
+                    </div>
+                )
+            })}
         </div>
     )
 }
