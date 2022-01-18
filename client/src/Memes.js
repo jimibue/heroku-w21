@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
+import MemeForm from './MemeForm'
 
 const Memes = ()=>{
     const [memes, setMemes] = useState([])
@@ -19,8 +20,9 @@ const Memes = ()=>{
 
     return (
         <div>
-            <h1>Memes</h1>
+            <h1>Memes YO BOB F1 FEATURE Branch HERE STill in Progress</h1>
             <p>{JSON.stringify(memes)}</p>
+            <MemeForm />
         </div>
     )
 }
