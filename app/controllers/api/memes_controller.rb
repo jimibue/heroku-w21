@@ -10,13 +10,11 @@ class Api::MemesController < ApplicationController
             begin
                 cloud_image = Cloudinary::Uploader.upload(file, public_id: file.original_filename, secure: true, resources_type: 'auto')
             rescue => e
-                debugger
                 render json: {errors: e}, status: 435
                 return
             end
         end
-        puts "HERE!!!!"
-        puts "HERE!!!!"
+      
         # succefully added to cloudinary try to save Meme to our db
         meme = Meme.new(title: params[:title], image_url:cloud_image['secure_url'] )
         if(meme.save)
