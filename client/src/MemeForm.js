@@ -19,7 +19,7 @@ import axios from 'axios'
 registerPlugin(FilePondPluginImageExifOrientation, FilePondPluginImagePreview)
 
 // Our app
-function MemeForm() {
+function MemeForm(props) {
     const [files, setFiles] = useState([])
     const [title, setTitle] = useState('')
     const handleSubmit = async (e)=>{
@@ -29,6 +29,7 @@ function MemeForm() {
         data.append('title', title)
         try {
             let res =  await axios.post('/api/memes', data)
+            props.addMeme(res.data)
             console.log(res)
         } catch(err){
             console.log(err)
