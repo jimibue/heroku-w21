@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     get '/memes', to: 'memes#index'
     post '/memes', to: 'memes#create'
+    post '/memes_url', to: 'memes#create_url'
   end
   # this needs to go at bottom
   get '*other', to: 'static#index'
